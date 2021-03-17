@@ -14,8 +14,14 @@ list_a = list(map(getvalue, col_a))
 list_c = list(map(getvalue, col_c))
 list_d = list(map(getvalue, col_d))
 
-pyplot.plot(list_a, list_c, label="Температура")
-pyplot.plot(list_a, list_d, label="Активность")
+pyplot.xlabel('Годы')
+pyplot.ylabel('Температура/Активность')
+pyplot.legend(loc='upper left')
+
+pyplot.plot(list_a, list_c, label="temp")
+pyplot.plot(list_a, list_d, label="activity")
+
+
 
 pyplot.show()
 
