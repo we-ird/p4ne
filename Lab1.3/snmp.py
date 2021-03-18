@@ -13,5 +13,6 @@ result = getCmd(SnmpEngine(),
 
 
 for errorIndication, errorStatus, errorIndex, varBinds in result:
+    print(varBinds)
     for message in varBinds:
         print(message)
