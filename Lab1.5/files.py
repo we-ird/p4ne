@@ -2,7 +2,7 @@ import glob
 
 ipList = []
 
-for name in glob.glob("./config_files/*.txt"):
+for name in glob.glob("../config_files/*.txt"):
     with open(name) as f:
         for line in f:
             if line.find('ip address ') != -1:
