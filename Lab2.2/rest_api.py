@@ -29,19 +29,12 @@ def create_host_ip_list():
                 if result and result.get('host') and result['host'] not in hosts_list:
                     if host['name']:
                         host_ip_list.append(host)
-                        host = {'name': None, 'ip': []}
                     hosts_list.append(result['host'])
                     host = {'name': result['host'], 'ip': []}
                 elif result and result.get('ip'):
                     host['ip'].append(str(result['ip']))
     host_ip_list.append(host)
     return(host_ip_list)
-
-
-#a = create_host_ip_list()
-
-#print(a)
-#print(list(filter(lambda x: x['name'] == 'cod-oldserv-cat3750', host_lists)))
 
 
 app = Flask(__name__)
@@ -67,8 +60,6 @@ def hostname_ip(hostname):
         return("IP's of " + hostname + ":<br>" + json.dumps(host[0]['ip']))
     else:
         return("device "+hostname+" does not exists")
-
-#print(create_host_ip_list())
 
 if __name__ == '__main__':
     hosts_lists = create_host_ip_list()
